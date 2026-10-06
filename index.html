@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zo Gabriel – Développeur web junior</title>
+<meta name="description" content="Zo Gabriel, développeur web junior. Sites simples et clairs pour les petits commerces, avec bouton WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vanille:#f8e9a8; --vanille-2:#fff6cf;
+  --nuit:#121b3a; --nuit-2:#1d2a57;
+  --lagon:#13a89b; --hibiscus:#ff5a79;
+  --texte:#121b3a; --doux:#46507a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--vanille);color:var(--texte);font-family:"Fraunces",Georgia,serif;font-size:1.15rem;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.btn,nav a,.pill{font-family:"Bricolage Grotesque","Segoe UI",Arial,sans-serif}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--hibiscus);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+
+/* en-tête */
+header{padding:1.4rem 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.3rem;color:var(--nuit);text-decoration:none}
+nav{display:flex;gap:1.6rem;font-weight:600;font-size:1rem}
+nav a{color:var(--nuit);text-decoration:none;padding-bottom:2px;border-bottom:3px solid transparent}
+nav a:hover{border-color:var(--hibiscus)}
+
+/* hero */
+.hero{padding:2.5rem 0 5rem}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+h1{font-weight:800;line-height:.86;letter-spacing:-.045em;font-size:clamp(4.2rem,15vw,9.5rem);color:var(--nuit)}
+h1 span{display:block}
+h1 .second{color:var(--hibiscus);margin-left:.25em}
+.role{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(1.3rem,3.4vw,1.8rem);margin-top:1.6rem}
+.intro{max-width:30rem;margin-top:.8rem;color:var(--doux)}
+.actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.95rem 1.6rem;border-radius:999px;font-weight:600;font-size:1.05rem;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-3px)}
+.btn.nuit{background:var(--nuit);color:var(--vanille-2)}
+.btn.rose{background:var(--hibiscus);color:#fff}
+.btn.clair{background:var(--vanille);color:var(--nuit)}
+
+/* fenêtre de navigateur dessinée en CSS */
+.browser{background:var(--nuit);border-radius:18px;padding:.7rem;box-shadow:14px 14px 0 var(--lagon);transform:rotate(3deg);animation:entree .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes entree{from{opacity:0;transform:translateY(40px) rotate(8deg)}to{opacity:1;transform:rotate(3deg)}}
+.bar{display:flex;gap:.4rem;padding:.2rem .5rem .7rem}
+.bar i{width:11px;height:11px;border-radius:50%;background:var(--hibiscus)}
+.bar i:nth-child(2){background:var(--vanille)}.bar i:nth-child(3){background:var(--lagon)}
+.page{background:var(--vanille-2);border-radius:10px;padding:1.4rem 1.2rem}
+.page b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.7rem;font-weight:800;line-height:1;display:block;color:var(--nuit)}
+.page small{display:block;color:var(--doux);font-size:.85rem;margin:.3rem 0 1rem}
+.page .l{height:9px;border-radius:5px;background:#e3d79a;margin:.45rem 0}
+.page .l.s{width:70%}.page .l.m{width:85%}
+.page .fake{display:inline-block;margin-top:.9rem;background:var(--lagon);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.85rem;padding:.4rem .9rem;border-radius:999px}
+
+/* sections */
+section{padding:5rem 0}
+h2{font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.03em;line-height:1;margin-bottom:2rem}
+.pill{display:inline-block;background:var(--nuit);color:var(--vanille-2);font-size:.85rem;font-weight:600;padding:.2rem .8rem;border-radius:999px;vertical-align:middle}
+.pill.rose{background:var(--hibiscus);color:#fff}
+
+.projets{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem}
+.carte{border-radius:26px;padding:2rem}
+.carte h3{font-weight:800;font-size:1.9rem;line-height:1.1;margin-bottom:.8rem}
+.carte p{margin-bottom:1rem}
+.carte a{font-family:"Bricolage Grotesque",sans-serif;font-weight:600}
+.vanille{background:var(--nuit);color:var(--vanille-2)}
+.vanille p{color:#cfd5ee}
+.vanille a{color:var(--vanille)}
+.formation{background:var(--lagon);color:var(--nuit)}
+
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.deux h3{font-size:1.4rem;font-weight:800;margin-bottom:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none}
+.tags li{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.6rem;background:var(--nuit);color:var(--vanille-2);padding:.4rem 1.2rem;border-radius:14px}
+.tags.notions li{background:transparent;color:var(--nuit);border:3px solid var(--nuit);font-weight:600;font-size:1.15rem;border-radius:999px;padding:.3rem 1rem}
+.franc{margin-top:1.6rem;color:var(--doux);max-width:30rem}
+.liste{list-style:none;max-width:40rem}
+.liste li{padding:.9rem 0 .9rem 2rem;border-bottom:2px solid rgba(18,27,58,.15);position:relative}
+.liste li::before{content:"";position:absolute;left:0;top:1.35rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--hibiscus)}
+
+/* contact */
+#contact{background:var(--nuit);color:var(--vanille-2);border-radius:42px 42px 0 0;padding:5rem 0 4rem;margin-top:2rem}
+#contact h2{color:var(--vanille)}
+#contact p{max-width:32rem;color:#cfd5ee}
+footer{background:var(--nuit);color:#9aa3cf;padding:0 0 2.5rem;font-size:.95rem}
+
+@media(max-width:760px){
+  .hero .wrap,.projets,.deux{grid-template-columns:1fr}
+  .browser{max-width:340px;margin-left:auto;margin-right:.5rem}
+  section{padding:3.5rem 0}
+  #contact{border-radius:28px 28px 0 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.browser{animation:none}.btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Zo Gabriel</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1><span>Zo</span><span class="second">Gabriel</span></h1>
+        <p class="role">Développeur web junior</p>
+        <p class="intro">Je crée des sites simples, clairs et rapides pour les petits commerces : restaurants, salons, boutiques. Je lance mon activité et je propose un tarif de lancement à mes premiers clients.</p>
+        <div class="actions">
+          <a class="btn rose" data-wa hidden>M'écrire sur WhatsApp</a>
+          <a class="btn nuit" data-mail hidden>M'envoyer un e-mail</a>
+          <a class="btn nuit" href="#projets" data-fallback hidden>Voir mes projets</a>
+        </div>
+      </div>
+      <div class="browser" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="page">
+          <b>Chez Vanille</b>
+          <small>Site de démonstration</small>
+          <div class="l"></div><div class="l m"></div><div class="l s"></div>
+          <span class="fake">Écrire sur WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="projets">
+    <div class="wrap">
+      <h2>Projets</h2>
+      <div class="projets">
+        <article class="carte vanille">
+          <h3>Chez Vanille <span class="pill rose">Démonstration</span></h3>
+          <p>Un site vitrine pour un restaurant imaginaire : accueil, menu, contact avec bouton WhatsApp. Ce n'est pas un vrai client. Il montre le type de site que je peux faire pour votre commerce.</p>
+          <a data-vanille hidden>Voir le site</a>
+          <span data-vanille-bientot class="pill" hidden>Bientôt en ligne</span>
+        </article>
+        <article class="carte formation">
+          <h3>Projet final et travaux pratiques</h3>
+          <p>Réalisés pendant ma formation en développement web, avec HTML, CSS, JavaScript, PHP et SQL.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="wrap">
+      <h2>Compétences</h2>
+      <div class="deux">
+        <div>
+          <h3>Ce que je maîtrise le mieux</h3>
+          <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+        </div>
+        <div>
+          <h3>Notions</h3>
+          <ul class="tags notions"><li>JavaScript</li><li>PHP</li><li>SQL</li></ul>
+        </div>
+      </div>
+      <p class="franc">Je suis débutant, et je le dis clairement. Je prends le temps de bien faire et de vous expliquer ce que je livre.</p>
+    </div>
+  </section>
+
+  <section id="offre">
+    <div class="wrap">
+      <h2>Pour votre commerce</h2>
+      <ul class="liste">
+        <li>Un site vitrine : accueil, produits ou services, horaires, contact</li>
+        <li>Un bouton WhatsApp pour que vos clients vous écrivent en un clic</li>
+        <li>Un site qui s'affiche bien sur téléphone</li>
+        <li>Des modifications simples après la livraison : textes, couleurs, photos</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Parlons de votre site</h2>
+      <p>Vous avez un commerce sans site, ou avec un site ancien ? Écrivez-moi, je vous réponds vite.</p>
+      <div class="actions">
+        <a class="btn rose" data-wa hidden>WhatsApp</a>
+        <a class="btn clair" data-mail hidden>E-mail</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Zo Gabriel, développeur web junior. Le site « Chez Vanille » est une démonstration, pas un vrai commerce.</p>
+  </div>
+</footer>
+
+<script>
+/* ============ À MODIFIER ICI, ET SEULEMENT ICI ============
+   Garde les guillemets. Laisse vide ("") ce que tu ne veux pas afficher. */
+const INFOS = {
+  whatsapp: "261338765883",   // ton numéro sans + ni espaces
+  email:    "zorakotoarisoa0501@gmail.com",
+  vanille:  "https://zorakotoarisoa0501-dotcom.github.io/chez-vanille/"  // lien du site restaurant, ou "" s'il n'est pas encore en ligne
+};
+/* ========================================================== */
+
+const wa = /^\d{8,15}$/.test(INFOS.whatsapp);
+const mail = /^\S+@\S+\.\S+$/.test(INFOS.email);
+
+document.querySelectorAll("[data-wa]").forEach(a => {
+  if (wa) { a.href = "https://wa.me/" + INFOS.whatsapp; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; }
+});
+document.querySelectorAll("[data-mail]").forEach(a => {
+  if (mail) { a.href = "mailto:" + INFOS.email; a.hidden = false; }
+});
+document.querySelectorAll("[data-fallback]").forEach(a => { if (!wa && !mail) a.hidden = false; });
+
+const v = document.querySelector("[data-vanille]");
+const vb = document.querySelector("[data-vanille-bientot]");
+if (INFOS.vanille) { v.href = INFOS.vanille; v.hidden = false; } else { vb.hidden = false; }
+</script>
+</body>
+</html>
